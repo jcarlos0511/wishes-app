@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { WhishesService } from 'src/app/services/wishes.service';
-import { Lista } from 'src/app/models/lista.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -11,9 +11,13 @@ export class Tab1Page {
 
   
 
-  constructor( public whishesService: WhishesService) {
+  constructor( public whishesService: WhishesService, private router: Router) {
     
     
+  }
+
+  agregarLista(){
+    this.router.navigateByUrl('tabs/tab1/agregar');
   }
 
 }

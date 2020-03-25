@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 import { WhishesService } from "src/app/services/wishes.service";
 import { Router } from "@angular/router";
 import { AlertController } from "@ionic/angular";
-import { Lista } from 'src/app/models/lista.model';
 
 @Component({
   selector: "app-tab1",
@@ -11,7 +10,7 @@ import { Lista } from 'src/app/models/lista.model';
 })
 export class Tab1Page {
   constructor(
-    public whishesService: WhishesService,
+    public wishesService: WhishesService,
     private router: Router,
     private alertCrtl: AlertController
   ) {}
@@ -46,7 +45,7 @@ export class Tab1Page {
             }
             // Crear la lista
 
-            const listaId = this.whishesService.crearLista( data.titulo );
+            const listaId = this.wishesService.crearLista( data.titulo );
 
             this.router.navigateByUrl(`tabs/tab1/agregar/${ listaId }`);
 
@@ -57,8 +56,4 @@ export class Tab1Page {
     alert.present();
   }
 
-  listaSeleccionada( lista : Lista ) {
-    //console.log(lista);
-    this.router. navigateByUrl(`tabs/tab1/agregar/${ lista.id }`)
-  }
 }

@@ -5,7 +5,7 @@
       <ion-back-button color="dark" defaultHref="/"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>{{ lista.titulo }}</ion-title>
+    <ion-title>{{ lista.titulo | titlecase }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -19,7 +19,7 @@
   </ion-list>
 
   <ion-list>
-    <ion-list-header>
+    <ion-list-header *ngIf="lista.items.length > 0">
       <ion-label>Tareas por hacer</ion-label>
     </ion-list-header>
 

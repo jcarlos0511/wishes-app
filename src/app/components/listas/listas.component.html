@@ -1,6 +1,6 @@
 <ion-list>
 
-  <ion-item-sliding *ngFor="let lista of wishesService.listas">
+  <ion-item-sliding *ngFor="let lista of wishesService.listas | filtro: terminada ">
 
     <ion-item  detail (click)="listaSeleccionada( lista )">
 

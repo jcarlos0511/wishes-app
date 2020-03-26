@@ -28,4 +28,10 @@ export class ListasComponent implements OnInit {
     }
   }
 
+  borrarLista( lista: Lista ){
+
+    this.wishesService.borrarLista( lista );
+
+  }
+
 }

@@ -12,12 +12,12 @@ export class Tab1Page {
   constructor(
     public wishesService: WhishesService,
     private router: Router,
-    private alertCrtl: AlertController
+    private alertCtrl: AlertController
   ) {}
 
   async agregarLista() {
     
-    const alert = await this.alertCrtl.create({
+    const alert = await this.alertCtrl.create({
       header: "Nueva Lista",
       inputs: [
         {
